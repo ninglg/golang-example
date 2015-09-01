@@ -11,7 +11,10 @@ func main() {
 		c = iota
 	)
 
+	const d = iota
+
 	fmt.Println(a)
 	fmt.Println(b)
 	fmt.Println(c)
+	fmt.Println(d)
 }
