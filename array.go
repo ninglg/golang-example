@@ -18,4 +18,6 @@ func main() {
 
 	fmt.Println(len(crr))
 
+	drr := [2][3]int{{4, 5, 6}, {7, 8, 9}}
+	fmt.Println(drr)
 }
