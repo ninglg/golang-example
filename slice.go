@@ -4,7 +4,6 @@ import "fmt"
 
 func main() {
 	i := [...]int{3: 4, 6: 9}
-
 	fmt.Println(i)
 
 	var j []int
@@ -24,8 +23,8 @@ func main() {
 	fmt.Println(j)
 	fmt.Println(i)
 
-	fmt.Println(len(j))
-	fmt.Println(cap(j))
+	fmt.Println("len is:", len(j))
+	fmt.Println("cap is:", cap(j))
 
 	j = append(j, 8)
 	fmt.Println(j)
