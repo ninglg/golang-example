@@ -23,9 +23,12 @@ func main() {
 	fmt.Println(j)
 	fmt.Println(i)
 
+	//len
 	fmt.Println("len is:", len(j))
+	//cap
 	fmt.Println("cap is:", cap(j))
 
+	//apend
 	j = append(j, 8)
 	fmt.Println(j)
 	fmt.Println(i)
@@ -33,4 +36,31 @@ func main() {
 	j = append(j, 6)
 	fmt.Println(j)
 	fmt.Println(i)
+
+	//copy
+	s := [5]int{1, 2, 3, 4, 5}
+
+	s1 := s[1:3]
+	s2 := s[0:2]
+	fmt.Println(s1, s2)
+
+	copy(s2, s1)
+	fmt.Println(s, s1, s2)
+
+	s1[0] = 9
+	fmt.Println(s, s1, s2)
+
+	//copy
+	s3 := s[1:3]
+
+	s4 := make([]int, 2)
+	fmt.Println(s4)
+
+	copy(s4, s3)
+	fmt.Println(s4)
+
+	s4[0] = 9
+	s3[0] = 99
+
+	fmt.Println(s3, s4)
 }
