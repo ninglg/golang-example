@@ -18,4 +18,11 @@ func main() {
 	case 0:
 		fmt.Println(0)
 	}
+
+	switch {
+	case 5 > 10:
+		fmt.Println("5 > 10")
+	case 4 < 8:
+		fmt.Println("4 < 8")
+	}
 }
