@@ -1,2 +1,5 @@
 ## golang-exercise
-**golang exercise stuff
+**golang exercise stuff**
+```
+play golang
+```
