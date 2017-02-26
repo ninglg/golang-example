@@ -64,4 +64,9 @@ func main() {
 	s3[0] = 99
 
 	fmt.Println(s3, s4)
+
+	s5 := []int{1, 2, 3}
+	s6 := []int{4, 5, 6}
+	s5 = append(s5, s6...)
+	fmt.Println("s5 is:", s5)
 }

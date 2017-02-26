@@ -5,21 +5,26 @@ import (
 )
 
 func main() {
-	i := make(map[string]int)
-	i["one"] = 1
-	i["two"] = 2
-	i["three"] = 3
-	fmt.Println(i)
-	fmt.Println(len(i))
+	type Person struct {
+		Name string
+		Age int
+	}
 
-	fmt.Println(i["one"])
+	var pp map[string]Person
+	pp = make(map[string]Person)
 
-	//
-	delete(i, "three")
-	fmt.Println(i)
+	pp["one"] = Person{"XiaoWang", 18}
+	pp["two"] = Person{"XiaoZhang", 17}
 
-	//
-	a, b := i["two"]
-	fmt.Println(a, b)
+	fmt.Println(pp)
 
+	data, ok := pp["two"]
+	if ok {
+		fmt.Println(data)
+	} else {
+		fmt.Println("data not exist!")
+	}
+
+	delete(pp, "two")
+	fmt.Println(pp)
 }
