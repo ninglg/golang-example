@@ -1,5 +1,8 @@
 package main
-import "fmt"
+
+import (
+    "fmt"
+)
 
 func main() {
     fmt.Printf("Hello, ")
