@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-func test(arg ...int) {
+func ts(arg ...int) {
 	fmt.Println(arg)
 }
 
 func main() {
-	test(1, 2, 3)
-	test(4, 5)
-	test(6)
+	ts(1, 2, 3)
+	ts(4, 5)
+	ts(6)
 }
