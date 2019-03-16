@@ -33,6 +33,16 @@ func main() {
 	sliceFunc()
 	// map + range + ok + delete
 	mapFunc()
+	// 递归函数
+	fibFunc()
+	// 类型转换
+	transFunc()
+	// 接口
+	infFunc()
+	// 错误处理
+	errorFunc()
+	// 并发
+	channelFunc()
 
 	fmt.Println("...main函数结束...")
 }
