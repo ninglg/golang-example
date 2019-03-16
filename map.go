@@ -1,30 +1,29 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-func main() {
-	type Person struct {
-		Name string
-		Age int
+func mapFunc() {
+	student := make(map[string]int)
+	student["xiaowang"] = 15
+	student["xiaoming"] = 16
+	student["xiaogang"] = 17
+
+	for name := range student {
+		fmt.Println(name)
 	}
 
-	var pp map[string]Person
-	pp = make(map[string]Person)
+	for name, age := range student {
+		fmt.Println("name = ", name, ", age = ", age)
+	}
 
-	pp["one"] = Person{"XiaoWang", 18}
-	pp["two"] = Person{"XiaoZhang", 17}
-
-	fmt.Println(pp)
-
-	data, ok := pp["two"]
+	age, ok := student["xiaogang"]
 	if ok {
-		fmt.Println(data)
-	} else {
-		fmt.Println("data not exist!")
+		fmt.Println("age = ", age)
 	}
 
-	delete(pp, "two")
-	fmt.Println(pp)
+	delete(student, "xiaogang")
+	age, ok = student["xiaogang"]
+	if !ok {
+		fmt.Println("age = nil")
+	}
 }

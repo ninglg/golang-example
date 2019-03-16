@@ -2,22 +2,9 @@ package main
 
 import "fmt"
 
-func main() {
-	var arr [10]int
-	brr := [5]int{6, 7, 8, 9, 10}
-	crr := [...]int{3: 2, 4: 1}
-
-	for i := 0; i < 10; i++ {
-		arr[i] = i * 2
-	}
-	fmt.Println(arr)
-
-	fmt.Println(brr)
-
-	fmt.Println(crr)
-
-	fmt.Println(len(crr))
-
-	drr := [2][3]int{{4, 5, 6}, {7, 8, 9}}
-	fmt.Println(drr)
+func arrayFunc() {
+	arr1 := [3]int{22, 33, 44}
+	arr2 := [...]string{"hello", "world"}
+	fmt.Println(arr1)
+	fmt.Println(arr2)
 }
