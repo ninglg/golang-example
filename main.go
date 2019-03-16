@@ -42,6 +42,8 @@ func main() {
 	// 错误处理
 	errorFunc()
 	// 并发
+	goFunc()
+	// 通道
 	channelFunc()
 
 	fmt.Println("...main函数结束...")
