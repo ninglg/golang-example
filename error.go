@@ -5,13 +5,13 @@ import (
 )
 
 // 定义一个 DivideError 结构
-type DivideError struct {
+type divideError struct {
 	dividee int
 	divider int
 }
 
 // 实现 `error` 接口
-func (de *DivideError) Error() string {
+func (de *divideError) Error() string {
 	strFormat := `
     Cannot proceed, the divider is zero.
     dividee: %d
@@ -20,28 +20,26 @@ func (de *DivideError) Error() string {
 	return fmt.Sprintf(strFormat, de.dividee)
 }
 
-// 定义 `int` 类型除法运算的函数
-func Divide(varDividee int, varDivider int) (result int, errorMsg string) {
+func divide(varDividee int, varDivider int) (result int, errorMsg string) {
 	if varDivider == 0 {
-		dData := DivideError{
+		dData := divideError{
 			dividee: varDividee,
 			divider: varDivider,
 		}
 		errorMsg = dData.Error()
 		return
-	} else {
-		return varDividee / varDivider, ""
 	}
 
+	return varDividee / varDivider, ""
 }
 
 func errorFunc() {
 	// 正常情况
-	if result, errorMsg := Divide(100, 10); errorMsg == "" {
+	if result, errorMsg := divide(100, 10); errorMsg == "" {
 		fmt.Println("100/10 = ", result)
 	}
 	// 当被除数为零的时候会返回错误信息
-	if _, errorMsg := Divide(100, 0); errorMsg != "" {
+	if _, errorMsg := divide(100, 0); errorMsg != "" {
 		fmt.Println("errorMsg is: ", errorMsg)
 	}
 }
