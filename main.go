@@ -9,6 +9,10 @@ func main() {
 	// 这里是注释
 	fmt.Println("...main函数开始...")
 
+	// os
+	osFunc()
+	// time
+	timeFunc()
 	// import
 	importFunc()
 	// 全局变量
@@ -19,6 +23,8 @@ func main() {
 	dummyFunc()
 	// 常量
 	infoFunc()
+	// 可变参数
+	argsFunc()
 	// iota
 	iotaFunc()
 	// switch

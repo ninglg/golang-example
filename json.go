@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-//
+// srv struct Marshal
 type srv struct {
 	Name string
 	IP   string
