@@ -9,6 +9,8 @@ func main() {
 	// 这里是注释
 	fmt.Println("...main函数开始...")
 
+	// import
+	importFunc()
 	// 全局变量
 	nameFunc()
 	// 短声明只能用于函数体内
@@ -25,6 +27,8 @@ func main() {
 	forFunc()
 	// 函数作为值
 	squareFunc()
+	// 随机数
+	randFunc()
 	// 结构体 + 方法
 	circleFunc()
 	// 数组
@@ -35,6 +39,8 @@ func main() {
 	mapFunc()
 	// 递归函数
 	fibFunc()
+	// goto
+	gotoFunc()
 	// 类型转换
 	transFunc()
 	// 接口
