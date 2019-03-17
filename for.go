@@ -7,4 +7,9 @@ func forFunc() {
 		fmt.Printf("%d ", i)
 	}
 	fmt.Println("")
+
+	for j, k := 0, 0; j+k < 100; j, k = j+5, k+10 {
+		fmt.Printf("%d,%d ", j, k)
+	}
+	fmt.Println("")
 }
