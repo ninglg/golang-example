@@ -36,7 +36,7 @@ func channelFunc() {
 	close(ch)
 	for {
 		if v, ok := <-ch; ok {
-			fmt.Println(v)
+			fmt.Printf("%d ", v)
 		} else {
 			break
 		}
@@ -44,4 +44,5 @@ func channelFunc() {
 	//for v := range ch {
 	//	fmt.Println(v)
 	//}
+	fmt.Println("")
 }

@@ -29,10 +29,14 @@ func main() {
 	squareFunc()
 	// 随机数
 	randFunc()
+	// 字符串
+	stringFunc()
 	// 结构体 + 方法
 	circleFunc()
 	// 数组
 	arrayFunc()
+	// 结构体
+	structFunc()
 	// 切片
 	sliceFunc()
 	// map + range + ok + delete
@@ -51,6 +55,8 @@ func main() {
 	goFunc()
 	// 通道
 	channelFunc()
+	// json
+	jsonFunc()
 
 	fmt.Println("...main函数结束...")
 }
