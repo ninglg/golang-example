@@ -49,6 +49,7 @@ func main() {
 	mapFunc()
 	// 递归函数
 	fibFunc()
+	fibFunc2()
 	// goto
 	gotoFunc()
 	// 类型转换
@@ -63,6 +64,13 @@ func main() {
 	channelFunc()
 	// json
 	jsonFunc()
+
+	// http
+	//httpFunc()
+	// file server
+	//fileServerFunc()
+	// http server
+	//httpServerFunc()
 
 	fmt.Println("...main函数结束...")
 }
