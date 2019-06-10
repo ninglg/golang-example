@@ -11,6 +11,8 @@ func main() {
 
 	// os
 	osFunc()
+	// invalid
+	invalidFunc()
 	// time
 	timeFunc()
 	// import

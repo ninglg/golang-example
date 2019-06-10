@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// for是唯一的循环语句
 func forFunc() {
 	for i := 0; i < 10; i++ {
 		fmt.Printf("%d ", i)
@@ -12,4 +13,12 @@ func forFunc() {
 		fmt.Printf("%d,%d ", j, k)
 	}
 	fmt.Println("")
+
+	//for j < 10 {
+	//	fmt.Println("这是while条件循环")
+	//}
+
+	//for {
+	//	fmt.Println("这是死循环")
+	//}
 }
