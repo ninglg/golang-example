@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func gotoFunc() {
+	fmt.Println("========== gotoFunc ==========")
 	fmt.Printf("gotoFunc : ")
 	i := 0
 Loop:

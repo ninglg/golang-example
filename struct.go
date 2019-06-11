@@ -4,12 +4,19 @@ import (
 	"fmt"
 )
 
+type address struct {
+	addr string
+	city string
+}
 type person struct {
 	name string
 	age  int
+	friends []*person  // 可用指针类型创建递归数据结构，如链表或树。
+	address
 }
 
 func structFunc() {
+	fmt.Println("========== structFunc ==========")
 	// 1
 	x := new(person)
 	x.name = "XiaoMing"
@@ -26,10 +33,10 @@ func structFunc() {
 	fmt.Println("struct y.name : ", y.name)
 
 	// 3
-	z := person{"XiaoHong", 19}
+	z := person{"XiaoHong", 19, nil, address{}}
 	fmt.Println("struct z : ", z)
 
 	// 4
-	g := person{age: 17, name: "XiaoZhang"}
+	g := person{age: 17, name: "XiaoZhang", friends:nil, address:address{}}
 	fmt.Println("struct g : ", g)
 }

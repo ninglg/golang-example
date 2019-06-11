@@ -19,9 +19,11 @@ type srvSlice struct {
 type Animal struct {
 	Name  string
 	Order string
+	Price int  `json:"price, omitempty"`
 }
 
 func jsonFunc() {
+	fmt.Println("========== jsonFunc ==========")
 	var s srvSlice
 	s.SS = append(s.SS, srv{Name: "Shanghai_VPN", IP: "127.0.0.1"})
 	s.SS = append(s.SS, srv{Name: "Beijing_VPN", IP: "127.0.0.2"})

@@ -13,6 +13,7 @@ func say(s string) {
 }
 
 func goFunc() {
+	fmt.Println("========== goFunc ==========")
 	go say("world")
 	say("hello")
 	fmt.Println("")

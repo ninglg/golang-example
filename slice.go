@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func sliceFunc() {
-	fmt.Println("==================== sliceFunc ====================")
+	fmt.Println("========== sliceFunc ==========")
 	// make
 	se := make([]int, 10, 20)
 	// len

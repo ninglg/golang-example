@@ -34,6 +34,6 @@ func httpGet() {
 	}
 }
 func httpFunc() {
-	//
+	fmt.Println("========== httpFunc ==========")
 	httpGet()
 }

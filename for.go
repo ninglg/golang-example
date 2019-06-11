@@ -4,6 +4,7 @@ import "fmt"
 
 // for是唯一的循环语句
 func forFunc() {
+	fmt.Println("========== forFunc ==========")
 	for i := 0; i < 10; i++ {
 		fmt.Printf("%d ", i)
 	}
