@@ -7,4 +7,5 @@ func invalidFunc() {
 	//j = i++  // 不支持
 	//--j  // 不支持
 	fmt.Println("invalidFunc : ", i, j)
+	fmt.Println("")
 }

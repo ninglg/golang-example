@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func stringFunc() {
+	fmt.Println("==================== stringFunc ====================")
 	str := "hello, world!"
 	fmt.Println("string : ", str)
 	fmt.Println("string[2] : ", str[2])
@@ -15,4 +19,17 @@ func stringFunc() {
 		fmt.Printf("%s ", string(j))
 	}
 	fmt.Println("")
+
+	str3 := []string{"hello", "test", "world"}
+	fmt.Println("str3 : ", strings.Join(str3, "_"))
+
+	str4 := "this_is_a_test"
+	fmt.Println("str4 : ", strings.Split(str4, "_"))
+
+	str5 := `abc`
+	s5 := []byte(str5)
+	fmt.Println(string(s5))
+
+	fmt.Println(strings.ToUpper("toupper"))
+	fmt.Println(strings.ToLower("TOLOWER"))
 }

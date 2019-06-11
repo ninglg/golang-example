@@ -9,6 +9,8 @@ func main() {
 	// 这里是注释
 	fmt.Println("...main函数开始...")
 
+	// flag
+	flagFunc()
 	// os
 	osFunc()
 	// invalid
@@ -69,6 +71,8 @@ func main() {
 
 	// http
 	//httpFunc()
+	// 并发http
+	concurrenceHTTP()
 	// file server
 	//fileServerFunc()
 	// http server

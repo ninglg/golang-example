@@ -3,23 +3,25 @@ package main
 import "fmt"
 
 func sliceFunc() {
+	fmt.Println("==================== sliceFunc ====================")
+	// make
 	se := make([]int, 10, 20)
 	// len
-	fmt.Println("slice len(se) = ", len(se))
+	fmt.Println("len(se) = ", len(se))
 	// cap
-	fmt.Println("slice cap(se) = ", cap(se))
+	fmt.Println("cap(se) = ", cap(se))
 	se = []int{5, 6, 7, 8}
-	fmt.Println("slice se = ", se)
+	fmt.Println("se = ", se)
 	// append 1
 	se = append(se, 9)
-	fmt.Println("slice append 1 : ", se)
+	fmt.Println("append 1 : ", se)
 	se[1] = 9
 	fmt.Println("slice : ", se[1:3])
 	// append 2
 	su := []int{1, 2, 3}
 	sv := []int{4, 5, 6}
 	su = append(su, sv...)
-	fmt.Println("slice append 2 :", su)
+	fmt.Println("append 2 :", su)
 
 	// copy
 	st := []int{12, 34}
