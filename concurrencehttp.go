@@ -9,7 +9,7 @@ import (
 )
 
 func concurrenceHTTP() {
-	fmt.Println("==================== concurrenceHttp ====================")
+	fmt.Println("========== concurrenceHttp ==========")
 	urls := []string{"http://www.baidu.com", "http://www.qq.com", "http://www.taobao.com"}
 
 	start := time.Now()

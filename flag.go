@@ -6,7 +6,7 @@ import (
 )
 
 func flagFunc() {
-	fmt.Println("==================== flagFunc ====================")
+	fmt.Println("========== flagFunc ==========")
 
 	var i bool
 	var s string
