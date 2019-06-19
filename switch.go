@@ -8,11 +8,11 @@ func switchFunc() {
 	switch ss {
 	case 0:
 		fmt.Println("case 0")
-	case 10:
+	case 10, 20, 30, 40:
 		fmt.Println("case 10")
 		fallthrough
-	case 20:
-		fmt.Println("case 20 fallthrough")
+	case 50:
+		fmt.Println("case 50 fallthrough")
 	default:
 		fmt.Println("case default")
 	}
