@@ -79,6 +79,7 @@ func main() {
 	//fileServerFunc()
 	// http server
 	//httpServerFunc()
+	pipelineFunc()
 
 	fmt.Println("...main函数结束...")
 }
