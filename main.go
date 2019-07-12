@@ -64,6 +64,8 @@ func main() {
 	infFunc()
 	// 错误处理
 	errorFunc()
+	// Recover
+	recoverFunc()
 	// 并发
 	goFunc()
 	// 通道
