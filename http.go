@@ -72,7 +72,9 @@ func httpDo() {
 	req.Header.Set("Cookie", "name=test")
 
 	resp, err := client.Do(req)
-
+	if err != nil {
+		fmt.Println(err)
+	}
 	defer resp.Body.Close()
 
 	body, err := ioutil.ReadAll(resp.Body)

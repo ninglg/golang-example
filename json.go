@@ -19,7 +19,7 @@ type srvSlice struct {
 type Animal struct {
 	Name  string
 	Order string
-	Price int  `json:"price, omitempty"`
+	Price int `json:"price,omitempty"`
 }
 
 func jsonFunc() {
