@@ -58,6 +58,8 @@ func main() {
 	gotoFunc()
 	// 类型转换
 	transFunc()
+	// 排序
+	sortFunc()
 	// Type
 	typeFunc()
 	// 接口
