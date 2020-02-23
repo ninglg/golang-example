@@ -86,6 +86,8 @@ func main() {
 	pipelineFunc()
 	// 文件操作
 	fileFunc()
+	// Base64
+	base64Func()
 
 	fmt.Println("...main函数结束...")
 }
