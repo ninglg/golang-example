@@ -1,18 +1,30 @@
 // go run *.go
 package main
 
+// 分组顺序：系统包、项目内部包、外部包
 import (
 	"fmt"
 )
 
 func main() {
-	// 这里是注释
+	// main之前有2个init函数被自动调用
+
+	// 开始执行main内部逻辑
 	fmt.Println("...main函数开始...")
 
+	// os包及os.Args
+	osFunc()
+
+	// i++是语句，不是表达式，所以 j = i++ 是不合法的
+	// 仅支持后缀形式，所以 --i 也是不合法的
+
+	// for 是 Go 里面唯一的循环语句
+
+	// 可变参数
+	argsFunc()
 	// flag
 	flagFunc()
-	// os
-	osFunc()
+
 	// invalid
 	invalidFunc()
 	// time
@@ -27,8 +39,6 @@ func main() {
 	dummyFunc()
 	// 常量
 	infoFunc()
-	// 可变参数
-	argsFunc()
 	// iota
 	iotaFunc()
 	// switch
@@ -68,6 +78,9 @@ func main() {
 	errorFunc()
 	// Recover
 	recoverFunc()
+
+	// 不要以共享内存的方式来通信，而要以通信来共享内存。
+	// CSP：通信顺序进程
 	// 并发
 	goFunc()
 	// 通道
