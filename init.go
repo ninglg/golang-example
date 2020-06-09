@@ -13,3 +13,7 @@ func init() {
 func init() {
 	fmt.Println("...第2个init函数...")
 }
+
+func main() {
+	//init自动执行
+}

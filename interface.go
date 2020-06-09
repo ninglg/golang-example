@@ -29,3 +29,7 @@ func infFunc() {
 	ph = new(iPhone)
 	fmt.Println(ph.call())
 }
+
+func main() {
+	infFunc()
+}

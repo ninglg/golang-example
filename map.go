@@ -43,3 +43,7 @@ func mapFunc() {
 
 	// map的值类型本身可以是符合数据类型，例如map或slice。
 }
+
+func main() {
+	mapFunc()
+}

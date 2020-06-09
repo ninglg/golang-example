@@ -46,3 +46,7 @@ func channelFunc() {
 	//}
 	fmt.Println("")
 }
+
+func main() {
+	channelFunc()
+}

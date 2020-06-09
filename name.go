@@ -15,3 +15,7 @@ func nameFunc() {
 
 	fmt.Println(name, age)
 }
+
+func main() {
+	nameFunc()
+}

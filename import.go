@@ -12,3 +12,7 @@ func importFunc() {
 	}
 	fmt.Println("")
 }
+
+func main() {
+	importFunc()
+}

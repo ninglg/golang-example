@@ -40,3 +40,7 @@ func switchFunc() {
 		fmt.Println("case : 4 < 8")
 	}
 }
+
+func main() {
+	switchFunc()
+}

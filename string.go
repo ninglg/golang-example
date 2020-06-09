@@ -33,3 +33,7 @@ func stringFunc() {
 	fmt.Println(strings.ToUpper("toupper"))
 	fmt.Println(strings.ToLower("TOLOWER"))
 }
+
+func main() {
+	stringFunc()
+}

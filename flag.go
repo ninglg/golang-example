@@ -16,3 +16,7 @@ func flagFunc() {
 	fmt.Println("show info : ", i)
 	fmt.Println("show string : ", s)
 }
+
+func main() {
+	flagFunc()
+}

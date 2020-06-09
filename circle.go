@@ -23,3 +23,7 @@ func circleFunc() {
 	c2.radius = 10.00
 	fmt.Println("圆的面积 = ", c2.getArea())
 }
+
+func main() {
+	circleFunc()
+}

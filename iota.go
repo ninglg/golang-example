@@ -17,3 +17,7 @@ const (
 func iotaFunc() {
 	fmt.Println(a, b, c, d, e, f, g, h, i)
 }
+
+func main() {
+	iotaFunc()
+}

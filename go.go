@@ -18,3 +18,7 @@ func goFunc() {
 	say("hello")
 	fmt.Println("")
 }
+
+func main() {
+	goFunc()
+}

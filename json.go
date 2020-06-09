@@ -48,3 +48,7 @@ func jsonFunc() {
 	fmt.Printf("json Unmarshal : %+v", animals)
 	fmt.Println("")
 }
+
+func main() {
+	jsonFunc()
+}

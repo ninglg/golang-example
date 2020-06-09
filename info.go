@@ -15,3 +15,7 @@ const (
 func infoFunc() {
 	fmt.Println(Info, InfoLen, InfoSize)
 }
+
+func main() {
+	infoFunc()
+}

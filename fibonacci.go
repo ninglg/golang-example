@@ -20,3 +20,7 @@ func fibFunc() {
 
 	fmt.Println("")
 }
+
+func main() {
+	fibFunc()
+}

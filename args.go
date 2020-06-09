@@ -14,3 +14,7 @@ func argsFunc() {
 	ts(a...)
 	ts(7, 8)
 }
+
+func main() {
+	argsFunc()
+}

@@ -43,3 +43,7 @@ func fetch(url string, ch chan<- string) {
 	secs := time.Since(start).Seconds()
 	ch <- fmt.Sprintf("%.2fs  %7d  %s", secs, nbytes, url)
 }
+
+func main() {
+	concurrenceHTTP()
+}

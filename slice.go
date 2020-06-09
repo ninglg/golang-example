@@ -41,3 +41,7 @@ func sliceFunc() {
 	}
 	fmt.Println("")
 }
+
+func main() {
+	sliceFunc()
+}

@@ -23,3 +23,7 @@ func forFunc() {
 	//	fmt.Println("这是死循环")
 	//}
 }
+
+func main() {
+	forFunc()
+}
