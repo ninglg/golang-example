@@ -32,12 +32,14 @@ func switchFunc() {
 		fmt.Println(0)
 	}
 
-	//
-	switch {
-	case 5 > 10:
-		fmt.Println("case : 5 > 10")
-	case 4 < 8:
-		fmt.Println("case : 4 < 8")
+	num := []int{1, 2, 3}
+	for _, i := range num {
+		switch {
+		case i%2 == 0:
+			fmt.Println("ok")
+		default:
+			fmt.Println("not ok")
+		}
 	}
 }
 
