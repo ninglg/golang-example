@@ -34,6 +34,7 @@ func init() {
 func main() {
 	var err error
 
+	defer db.Close()
 	// 如果要测试连接，必须执行查询以强制打开连接。常见的方法是在数据库对象上调用Ping()。
 	err = db.Ping()
 	if err != nil {
@@ -76,7 +77,7 @@ func main() {
 	lastId, _ = result.LastInsertId()
 	fmt.Println("db.Prepare stmt.Exec insert lastId is: ", lastId)
 
-	// 3.Update
+	// 3.使用db.Exec方法来进行Update
 	result, err = db.Exec("update student set stu_name='xiaoqiang' where stu_id = ?", 200)
 	if err != nil {
 		fmt.Println("db.Exec update error:", err.Error())
@@ -86,13 +87,13 @@ func main() {
 	rowsAffected, _ = result.RowsAffected()
 	fmt.Println("db.Exec update rowsAffected is:", rowsAffected)
 
-	// 4.Query查询一条记录
+	// 4.使用db.QueryRow查询一条记录
 	var stuId int
 	var stuName string
 	db.QueryRow("select stu_id, stu_name from student where stu_id = ?", 100).Scan(&stuId, &stuName)
 	fmt.Println("db.QueryRow:", stuId, stuName)
 
-	// 5.Query查询多条记录
+	// 5.使用db.Query查询多条记录
 	rows, err := db.Query("select stu_id, stu_name from student")
 	if err != nil {
 		fmt.Println("db.Query rows error:", err.Error())
@@ -111,5 +112,5 @@ func main() {
 
 		fmt.Println("db.Query rows.Next:", id, name)
 	}
-	
+
 }
