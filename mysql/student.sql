@@ -1,6 +1,6 @@
 use school;
 
-#drop table student;
+drop table student;
 
 CREATE TABLE `student` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
@@ -8,6 +8,7 @@ CREATE TABLE `student` (
   `stu_name` varchar(20) NOT NULL DEFAULT "" COMMENT '学生姓名',
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_stuid` (`stu_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='学生表';
 
