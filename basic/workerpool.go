@@ -10,7 +10,8 @@ func process(i int) {
 	fmt.Println(i)
 }
 
-func main() {
+func workerpool() {
+	fmt.Println("========== workerpool ==========")
 	start := time.Now()
 	channel := make(chan int, 100)
 	var wg sync.WaitGroup
