@@ -16,7 +16,3 @@ func sortFunc() {
 	sort.Sort(sort.Reverse(sort.IntSlice(s)))
 	fmt.Println("sorted from big to small: ", s)
 }
-
-func main() {
-	sortFunc()
-}

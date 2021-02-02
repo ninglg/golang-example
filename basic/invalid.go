@@ -9,7 +9,3 @@ func invalidFunc() {
 	fmt.Println("invalidFunc : ", i, j)
 	fmt.Println("")
 }
-
-func main() {
-	invalidFunc()
-}

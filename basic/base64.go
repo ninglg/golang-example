@@ -23,7 +23,3 @@ func base64Func() {
 		fmt.Println(string(data))
 	}
 }
-
-func main() {
-	base64Func()
-}

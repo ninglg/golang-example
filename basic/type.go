@@ -15,7 +15,3 @@ func typeFunc() {
 		fmt.Println("string type")
 	}
 }
-
-func main() {
-	typeFunc()
-}

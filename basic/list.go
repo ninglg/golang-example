@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func listFunc() {
 	fmt.Println("========== ListFunc ==========")
 
 	tmpList := list.New()

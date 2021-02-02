@@ -43,7 +43,3 @@ func errorFunc() {
 		fmt.Println("errorMsg is: ", errorMsg)
 	}
 }
-
-func main() {
-	errorFunc()
-}

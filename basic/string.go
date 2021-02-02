@@ -34,6 +34,3 @@ func stringFunc() {
 	fmt.Println(strings.ToLower("TOLOWER"))
 }
 
-func main() {
-	stringFunc()
-}

@@ -10,7 +10,3 @@ func dummyFunc() {
 	str, _, err := testDummy()
 	fmt.Println(str, err)
 }
-
-func main() {
-	dummyFunc()
-}

@@ -79,7 +79,3 @@ func pipelineFunc() {
 
 	fmt.Println()
 }
-
-func main() {
-	pipelineFunc()
-}

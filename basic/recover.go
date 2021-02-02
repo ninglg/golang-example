@@ -22,7 +22,3 @@ func recoverFunc() {
 	fmt.Println(n[3])
 	fmt.Println("normally returned")
 }
-
-func main() {
-	recoverFunc()
-}

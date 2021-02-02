@@ -43,7 +43,3 @@ func fileFunc() {
 	_ = os.Remove("test.txt")
 	fmt.Println("file removed successfully")
 }
-
-func main() {
-	fileFunc()
-}

@@ -24,6 +24,3 @@ func forFunc() {
 	//}
 }
 
-func main() {
-	forFunc()
-}

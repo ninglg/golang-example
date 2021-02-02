@@ -12,7 +12,3 @@ func squareFunc() {
 
 	fmt.Println(getSquareRoot(9))
 }
-
-func main() {
-	squareFunc()
-}

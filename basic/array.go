@@ -12,7 +12,3 @@ func arrayFunc() {
 	fmt.Println(arr2)
 	fmt.Println(arr3)
 }
-
-func main() {
-	arrayFunc()
-}

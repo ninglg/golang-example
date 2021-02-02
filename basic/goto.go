@@ -14,7 +14,3 @@ Loop:
 	}
 	fmt.Println("")
 }
-
-func main() {
-	gotoFunc()
-}

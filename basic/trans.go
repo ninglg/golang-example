@@ -10,7 +10,3 @@ func transFunc() {
 	mean = float32(sum) / float32(count)
 	fmt.Printf("mean的值为: %f\n", mean)
 }
-
-func main() {
-	transFunc()
-}

@@ -14,6 +14,6 @@ func init() {
 	fmt.Println("...第2个init函数...")
 }
 
-func main() {
+func initFunc() {
 	//init自动执行
 }

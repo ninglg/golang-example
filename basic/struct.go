@@ -40,7 +40,3 @@ func structFunc() {
 	g := person{age: 17, name: "XiaoZhang", friends:nil, address:address{}}
 	fmt.Println("struct g : ", g)
 }
-
-func main() {
-	structFunc()
-}

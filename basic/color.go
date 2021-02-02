@@ -7,6 +7,3 @@ func colorFunc() {
 	fmt.Println(color, num)
 }
 
-func main() {
-	colorFunc()
-}

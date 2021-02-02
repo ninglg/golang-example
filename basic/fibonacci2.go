@@ -34,7 +34,3 @@ func fibFunc2() {
 	//	time.Sleep(1)
 	//}
 }
-
-func main() {
-	fibFunc2()
-}

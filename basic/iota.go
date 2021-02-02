@@ -3,21 +3,17 @@ package main
 import "fmt"
 
 const (
-	a = iota // 0
-	b        // 1
-	c        // 2
-	d = "ha" // 独立值"ha", iota += 1
-	e        // "ha"   iota += 1
-	f = 100  // iota +=1
-	g        // 100  iota +=1
-	h = iota // 7, 恢复计数
-	i        // 8
+	aa = iota // 0
+	bb        // 1
+	cc        // 2
+	dd = "ha" // 独立值"ha", iota += 1
+	ee        // "ha"   iota += 1
+	ff = 100  // iota +=1
+	gg        // 100  iota +=1
+	hh = iota // 7, 恢复计数
+	ii        // 8
 )
 
 func iotaFunc() {
-	fmt.Println(a, b, c, d, e, f, g, h, i)
-}
-
-func main() {
-	iotaFunc()
+	fmt.Println(aa, bb, cc, dd, ee, ff, gg, hh, ii)
 }

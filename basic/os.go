@@ -12,8 +12,3 @@ func osFunc() {
 	// 实际参数范围是os.Args[1:len(os.Args)]
 	fmt.Println("argsFunc os.Args : %+v", os.Args)
 }
-
-func main() {
-	// os.Args
-	osFunc()
-}

@@ -42,7 +42,3 @@ func switchFunc() {
 		}
 	}
 }
-
-func main() {
-	switchFunc()
-}

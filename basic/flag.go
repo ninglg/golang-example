@@ -42,14 +42,6 @@ func init() {
 	flag.Usage = usage
 }
 
-func main() {
-	flag.Parse()
-	fmt.Println("========== flagFunc ==========")
-	if h {
-		flag.Usage()
-	}
-}
-
 func usage() {
 	fmt.Fprintf(os.Stderr, `nginx version: nginx/1.10.0
 Usage: nginx [-hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
@@ -57,4 +49,12 @@ Usage: nginx [-hvVtTq] [-s signal] [-c filename] [-p prefix] [-g directives]
 Options:
 `)
 	flag.PrintDefaults()
+}
+
+func flagFunc() {
+	flag.Parse()
+	fmt.Println("========== flagFunc ==========")
+	if h {
+		flag.Usage()
+	}
 }
