@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 func switchFunc() {
+	fmt.Println("========== switchFunc ==========")
+
 	var ss int
 	ss = 10
 	switch ss {
