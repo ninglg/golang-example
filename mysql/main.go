@@ -64,12 +64,13 @@ func insertSql2() {
 		fmt.Println("db.Prepare error:", err.Error())
 		return
 	}
-	// 资源关闭
-	defer stmt.Close()
 
 	result, _ := stmt.Exec(200, "xiaoming")
 	lastId, _ := result.LastInsertId()
 	fmt.Println("db.Prepare stmt.Exec insert lastId is: ", lastId)
+
+	// 资源关闭
+	_ = stmt.Close()
 }
 
 func updateSql() {
@@ -89,7 +90,7 @@ func queryRow() {
 	// 使用db.QueryRow查询一条记录
 	var stuId int
 	var stuName string
-	db.QueryRow("select stu_id, stu_name from student where stu_id = ?", 100).Scan(&stuId, &stuName)
+	_ = db.QueryRow("select stu_id, stu_name from student where stu_id = ?", 100).Scan(&stuId, &stuName)
 	fmt.Println("db.QueryRow:", stuId, stuName)
 }
 
@@ -114,12 +115,10 @@ func query() {
 		fmt.Println("db.Query rows.Next:", id, name)
 	}
 
-	rows.Close()
+	_ = rows.Close()
 }
 
 func main() {
-	defer db.Close()
-
 	ping()
 	deleteSql()
 	insertSql()
@@ -127,4 +126,6 @@ func main() {
 	updateSql()
 	queryRow()
 	query()
+
+	_ = db.Close()
 }
