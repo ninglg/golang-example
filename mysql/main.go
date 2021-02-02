@@ -126,6 +126,7 @@ func main() {
 	updateSql()
 	queryRow()
 	query()
+	//transaction()
 
 	_ = db.Close()
 }
