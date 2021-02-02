@@ -1,2 +1,2 @@
 # golang-example
-golang exercise
+golang example

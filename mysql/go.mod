@@ -1,4 +1,4 @@
-module github.com/ninglg/golang-exercise/mysql
+module github.com/ninglg/golang-example/mysql
 
 go 1.15
 
