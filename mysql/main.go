@@ -7,6 +7,9 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+// sql.DB的设计就是用来作为长连接使用的，不要频繁Open和Close。
+// 比较好的做法是，为每个不同的datastore建一个DB对象，保持这些对象Open。
+// 如果需要短连接，那么把DB作为参数传入function，而不要在function中Open和Close。
 var db *sql.DB
 
 func init() {
@@ -58,19 +61,19 @@ func insertSql() {
 }
 
 func insertSql2() {
-	// 2.使用Prepare方法和stmt的Exec方法来进行Insert
+	// 一般用Prepared Statements和stmt.Exec()来完成insert, update, delete操作。
+	// Prepared Statements是和单个数据库连接绑定的。客户端发送一个有占位符的statement到服务端，服务器返回一个statement ID，然后客户端发送ID和参数来执行statement。
+	// database/sql包有自动重试等功能。当生成一个Prepared Statement时会自动在连接池中绑定到一个空闲连接，Stmt对象记住了绑定的连接。当执行Stmt时会尝试使用该连接。如果不可用，例如连接被关闭或繁忙中，会自动re-prepare，绑定到另一个连接。
 	stmt, err := db.Prepare("insert student (stu_id, stu_name) values (?, ?)")
 	if err != nil {
 		fmt.Println("db.Prepare error:", err.Error())
 		return
 	}
+	defer stmt.Close()
 
 	result, _ := stmt.Exec(200, "xiaoming")
 	lastId, _ := result.LastInsertId()
 	fmt.Println("db.Prepare stmt.Exec insert lastId is: ", lastId)
-
-	// 资源关闭
-	_ = stmt.Close()
 }
 
 func updateSql() {
@@ -83,7 +86,6 @@ func updateSql() {
 
 	rowsAffected, _ := result.RowsAffected()
 	fmt.Println("db.Exec update rowsAffected is:", rowsAffected)
-
 }
 
 func queryRow() {
@@ -101,6 +103,8 @@ func query() {
 		fmt.Println("db.Query rows error:", err.Error())
 		return
 	}
+	// rows.Close()也可以多次调用，无副作用
+	defer rows.Close()
 
 	for rows.Next() {
 		var (
@@ -115,10 +119,21 @@ func query() {
 		fmt.Println("db.Query rows.Next:", id, name)
 	}
 
-	_ = rows.Close()
+	if err = rows.Err(); err != nil {
+		fmt.Println("db.Query rows.Err:", err.Error())
+	}
+}
+
+func trans() {
+	// db.Begin()开始事务，Commit()或Rollback()关闭事务。
+	// Tx从连接池中取出一个连接，在关闭之前都是使用这个连接。
+	// Tx不能和DB层的Begin, Commit混合使用。
+
 }
 
 func main() {
+	defer db.Close()
+
 	ping()
 	deleteSql()
 	insertSql()
@@ -126,7 +141,5 @@ func main() {
 	updateSql()
 	queryRow()
 	query()
-	//transaction()
-
-	_ = db.Close()
+	trans()
 }
