@@ -15,6 +15,12 @@ func init() {
 		Password: "", // no password set
 		DB:       0,  // use default DB
 	})
+
+	result, err := rdb.Ping(ctx).Result()
+	if err != nil {
+		panic(err.Error())
+	}
+	fmt.Println("ping:", result)
 }
 
 func setString() {
