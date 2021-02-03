@@ -13,9 +13,9 @@ func process(i int) {
 func workerpool() {
 	fmt.Println("========== workerpool ==========")
 	start := time.Now()
-	channel := make(chan int, 100)
+	channel := make(chan int, 10)
 	var wg sync.WaitGroup
-	var workerPoolSize = 100
+	var workerPoolSize = 10
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
@@ -30,7 +30,7 @@ func workerpool() {
 		}
 	}()
 
-	for i := 0; i < 1000; i++ {
+	for i := 0; i < 30; i++ {
 		channel <- i
 	}
 	close(channel)
