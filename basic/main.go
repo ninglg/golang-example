@@ -43,5 +43,4 @@ func main() {
 	timeFunc()
 	transFunc()
 	typeFunc()
-	workerpool()
 }

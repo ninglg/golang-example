@@ -7,11 +7,11 @@ import (
 )
 
 func process(i int) {
-	fmt.Println(i)
+	fmt.Printf("%d ", i)
 }
 
-func workerpool() {
-	fmt.Println("========== workerpool ==========")
+func workerpool1() {
+	fmt.Println("============ workerpool1 ============")
 	start := time.Now()
 	channel := make(chan int, 10)
 	var wg sync.WaitGroup
@@ -36,7 +36,7 @@ func workerpool() {
 	close(channel)
 	wg.Wait()
 
-	elasped := time.Since(start)
+	elapsed := time.Since(start)
 
-	fmt.Printf("Took %s\n", elasped)
+	fmt.Printf("\nworkerpool1 took %s to run\n", elapsed)
 }
