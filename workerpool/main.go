@@ -16,11 +16,11 @@ func workerpool() {
 	channel := make(chan int, 10)
 	var wg sync.WaitGroup
 	// 5个worker
-	var workerPoolSize = 5
+	var workerNum = 5
 	wg.Add(1)
 	go func() {
 		defer wg.Done()
-		for i := 0; i < workerPoolSize; i++ {
+		for i := 0; i < workerNum; i++ {
 			wg.Add(1)
 			go func() {
 				defer wg.Done()
@@ -33,7 +33,8 @@ func workerpool() {
 	}()
 
 	// 30个task
-	for i := 0; i < 30; i++ {
+	taskNum := 30
+	for i := 0; i < taskNum; i++ {
 		channel <- i
 	}
 	close(channel)
@@ -41,7 +42,7 @@ func workerpool() {
 
 	elapsed := time.Since(startTime)
 
-	fmt.Printf("\nworkerpool1 took %s to finish\n", elapsed)
+	fmt.Printf("\nworkerpool took %s to finish %d jobs with %d workers.\n", elapsed, taskNum, workerNum)
 }
 
 func main() {
