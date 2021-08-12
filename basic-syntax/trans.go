@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func transFunc() {
+func main() {
 	var sum = 17
 	var count = 5
 	var mean float32

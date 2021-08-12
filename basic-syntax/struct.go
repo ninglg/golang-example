@@ -15,11 +15,10 @@ type person struct {
 	address
 }
 
-func structFunc() {
-	fmt.Println("========== structFunc ==========")
+func main() {
 	// 1
 	x := new(person)
-	x.name = "XiaoMing"
+	x.name = "aaa"
 	x.age = 17
 	fmt.Println("struct x : ", x)
 	fmt.Println("struct *x : ", *x)
@@ -27,16 +26,16 @@ func structFunc() {
 
 	// 2
 	var y person
-	y.name = "XiaoGang"
+	y.name = "bbb"
 	y.age = 23
 	fmt.Println("struct y : ", y)
 	fmt.Println("struct y.name : ", y.name)
 
 	// 3
-	z := person{"XiaoHong", 19, nil, address{}}
+	z := person{"ccc", 19, nil, address{}}
 	fmt.Println("struct z : ", z)
 
 	// 4
-	g := person{age: 17, name: "XiaoZhang", friends:nil, address:address{}}
+	g := person{age: 17, name: "ddd", friends:nil, address:address{}}
 	fmt.Println("struct g : ", g)
 }

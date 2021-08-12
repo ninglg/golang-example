@@ -12,6 +12,6 @@ const (
 	InfoSize = unsafe.Sizeof(Info)
 )
 
-func infoFunc() {
+func main() {
 	fmt.Println(Info, InfoLen, InfoSize)
 }

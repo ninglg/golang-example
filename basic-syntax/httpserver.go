@@ -9,8 +9,8 @@ import (
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {
-	io.WriteString(w, "hello, world!\n")
-	r.ParseForm()
+	_, _ = io.WriteString(w, "hello, world!\n")
+	_ = r.ParseForm()
 
 	fmt.Println(r.Form)
 	fmt.Println("path : ", r.URL.Path)
@@ -21,11 +21,10 @@ func hello(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("val:", strings.Join(v, ""))
 	}
 
-	fmt.Fprintln(w, r.Form)
+	_, _ = fmt.Fprintln(w, r.Form)
 }
 
-func httpServerFunc() {
-	fmt.Println("========== httpServerFunc ==========")
+func main() {
 	http.HandleFunc("/hi", hello)
 	err := http.ListenAndServe(":9090", nil)
 	if err != nil {

@@ -5,12 +5,11 @@ import (
 	"sort"
 )
 
-func mapFunc() {
-	fmt.Println("========== mapFunc ==========")
+func main() {
 	student := make(map[string]int)
-	student["xiaowang"] = 15
-	student["xiaoming"] = 16
-	student["xiaogang"] = 17
+	student["aaa"] = 15
+	student["bbb"] = 16
+	student["ccc"] = 17
 
 	for name := range student {
 		fmt.Println(name)
@@ -20,13 +19,13 @@ func mapFunc() {
 		fmt.Println("name = ", name, ", age = ", age)
 	}
 
-	age, ok := student["xiaogang"]
+	age, ok := student["ccc"]
 	if ok {
 		fmt.Println("age = ", age)
 	}
 
-	delete(student, "xiaogang")
-	age, ok = student["xiaogang"]
+	delete(student, "ccc")
+	age, ok = student["ccc"]
 	if !ok {
 		fmt.Println("age = nil")
 	}

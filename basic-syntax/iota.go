@@ -14,6 +14,7 @@ const (
 	ii        // 8
 )
 
-func iotaFunc() {
+func main() {
 	fmt.Println(aa, bb, cc, dd, ee, ff, gg, hh, ii)
+	//0 1 2 ha ha 100 100 7 8
 }

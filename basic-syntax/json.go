@@ -22,8 +22,7 @@ type Animal struct {
 	Price int `json:"price,omitempty"`
 }
 
-func jsonFunc() {
-	fmt.Println("========== jsonFunc ==========")
+func main() {
 	var s srvSlice
 	s.SS = append(s.SS, srv{Name: "Shanghai_VPN", IP: "127.0.0.1"})
 	s.SS = append(s.SS, srv{Name: "Beijing_VPN", IP: "127.0.0.2"})
@@ -46,5 +45,4 @@ func jsonFunc() {
 		fmt.Println("json Unmarshal error : ", err)
 	}
 	fmt.Printf("json Unmarshal : %+v", animals)
-	fmt.Println("")
 }

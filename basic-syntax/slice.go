@@ -2,21 +2,26 @@ package main
 
 import "fmt"
 
-func sliceFunc() {
-	fmt.Println("========== sliceFunc ==========")
+func main() {
 	// make
 	se := make([]int, 10, 20)
+
 	// len
 	fmt.Println("len(se) = ", len(se))
 	// cap
 	fmt.Println("cap(se) = ", cap(se))
+	// fmt
+	fmt.Println(se)
+
 	se = []int{5, 6, 7, 8}
 	fmt.Println("se = ", se)
+
 	// append 1
 	se = append(se, 9)
 	fmt.Println("append 1 : ", se)
 	se[1] = 9
 	fmt.Println("slice : ", se[1:3])
+
 	// append 2
 	su := []int{1, 2, 3}
 	sv := []int{4, 5, 6}
@@ -39,5 +44,4 @@ func sliceFunc() {
 	for _, num := range si {
 		fmt.Printf("%f ", num)
 	}
-	fmt.Println("")
 }

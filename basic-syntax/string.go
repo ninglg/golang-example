@@ -5,8 +5,7 @@ import (
 	"strings"
 )
 
-func stringFunc() {
-	fmt.Println("========== stringFunc ==========")
+func main() {
 	str := "hello, world!"
 	fmt.Println("string : ", str)
 	fmt.Println("string[2] : ", str[2])

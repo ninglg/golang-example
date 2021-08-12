@@ -2,9 +2,8 @@ package main
 
 import "fmt"
 
-func switchFunc() {
-	fmt.Println("========== switchFunc ==========")
-
+func main() {
+	//
 	var ss int
 	ss = 10
 	switch ss {
@@ -34,13 +33,14 @@ func switchFunc() {
 		fmt.Println(0)
 	}
 
+	//
 	num := []int{1, 2, 3}
 	for _, i := range num {
 		switch {
 		case i%2 == 0:
-			fmt.Println("ok")
+			fmt.Println(i, " ok")
 		default:
-			fmt.Println("not ok")
+			fmt.Println(i, " not ok")
 		}
 	}
 }

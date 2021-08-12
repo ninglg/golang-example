@@ -9,7 +9,7 @@ var (
 	sex  byte // 全局变量允许声明但不使用
 )
 
-func nameFunc() {
+func main() {
 	name = "xiaowang"
 	age = 16
 

@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func squareFunc() {
+func main() {
 	getSquareRoot := func(x float64) float64 {
 		return math.Sqrt(x)
 	}

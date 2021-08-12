@@ -2,9 +2,7 @@ package main
 
 import "fmt"
 
-func gotoFunc() {
-	fmt.Println("========== gotoFunc ==========")
-	fmt.Printf("gotoFunc : ")
+func main() {
 	i := 0
 Loop:
 	if i < 10 {
@@ -12,5 +10,4 @@ Loop:
 		i++
 		goto Loop
 	}
-	fmt.Println("")
 }

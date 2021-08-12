@@ -62,9 +62,7 @@ func merge(cs ...<-chan int) <-chan int {
 	return out
 }
 
-func pipelineFunc() {
-	fmt.Println("========== pipelineFunc ==========")
-
+func main() {
 	in := producer(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
 	// FAN-OUT

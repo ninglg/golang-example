@@ -51,9 +51,8 @@ Options:
 	flag.PrintDefaults()
 }
 
-func flagFunc() {
+func main() {
 	flag.Parse()
-	fmt.Println("========== flagFunc ==========")
 	if h {
 		flag.Usage()
 	}

@@ -20,7 +20,7 @@ func (ip iPhone) call() string {
 	return "I am iPhone, I can call you!"
 }
 
-func interfaceFunc() {
+func main() {
 	var ph phone
 
 	ph = new(nokiaPhone)

@@ -3,8 +3,7 @@ package main
 import "fmt"
 
 // for是唯一的循环语句
-func forFunc() {
-	fmt.Println("========== forFunc ==========")
+func main() {
 	for i := 0; i < 10; i++ {
 		fmt.Printf("%d ", i)
 	}
@@ -23,4 +22,3 @@ func forFunc() {
 	//	fmt.Println("这是死循环")
 	//}
 }
-
