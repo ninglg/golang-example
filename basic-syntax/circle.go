@@ -13,7 +13,7 @@ func (c circle) getArea() float64 {
 	return 3.14 * c.radius * c.radius
 }
 
-func circleFunc() {
+func main() {
 	// 结构体
 	c1 := circle{10.00}
 	fmt.Println("圆的半径 = ", c1.radius)

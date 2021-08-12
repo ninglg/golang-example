@@ -5,8 +5,7 @@ import (
 	"fmt"
 )
 
-func base64Func() {
-	fmt.Println("========== base64Func ==========")
+func main() {
 	// 需要处理的字符串
 	message := "Away from keyboard. https://golang.org/"
 	// 编码消息

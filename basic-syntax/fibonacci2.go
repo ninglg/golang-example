@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 func fibonacci2(c, quit chan int) {
@@ -25,12 +26,12 @@ func show(c, quit chan int) {
 	quit <- 0
 }
 
-func fibFunc2() {
+func main() {
 	data := make(chan int)
 	leave := make(chan int)
 	go show(data, leave)
 	go fibonacci2(data, leave)
-	//for {
-	//	time.Sleep(1)
-	//}
+	for {
+		time.Sleep(time.Second)
+	}
 }

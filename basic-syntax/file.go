@@ -5,8 +5,7 @@ import (
 	"os"
 )
 
-func fileFunc() {
-	fmt.Println("========== fileFunc ==========")
+func main() {
 	// 将字符串写入文件
 	f, err := os.Create("test.txt")
 	if err != nil {

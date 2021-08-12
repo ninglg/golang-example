@@ -10,14 +10,13 @@ func sum(s []int, c chan int) {
 	c <- sum // 把 sum 发送到通道 c
 }
 
-func channelFunc() {
+func main() {
 	s := []int{7, 2, 8, -9, 4, 0}
 
 	c := make(chan int)
 	go sum(s[:len(s)/2], c)
 	go sum(s[len(s)/2:], c)
 	x, y := <-c, <-c // 从通道 c 中接收
-
 	fmt.Println(x, y, x+y)
 
 	// 通道缓冲区(缓冲区大小为2)
@@ -27,22 +26,20 @@ func channelFunc() {
 	ch <- 1
 	ch <- 2
 	// 获取这两个数据
-	fmt.Println(<-ch)
-	fmt.Println(<-ch)
+	fmt.Println(<-ch, <-ch)
 
 	// 遍历通道与关闭通道
 	ch <- 3
 	ch <- 4
 	close(ch)
-	for {
-		if v, ok := <-ch; ok {
-			fmt.Printf("%d ", v)
-		} else {
-			break
-		}
-	}
-	//for v := range ch {
-	//	fmt.Println(v)
+	//for {
+	//	if v, ok := <-ch; ok {
+	//		fmt.Printf("%d ", v)
+	//	} else {
+	//		break
+	//	}
 	//}
-	fmt.Println("")
+	for v := range ch {
+		fmt.Println(v)
+	}
 }

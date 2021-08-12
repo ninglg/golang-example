@@ -33,7 +33,7 @@ func divide(varDividee int, varDivider int) (result int, errorMsg string) {
 	return varDividee / varDivider, ""
 }
 
-func errorFunc() {
+func main() {
 	// 正常情况
 	if result, errorMsg := divide(100, 10); errorMsg == "" {
 		fmt.Println("100/10 = ", result)

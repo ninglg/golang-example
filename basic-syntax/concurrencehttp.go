@@ -8,8 +8,7 @@ import (
 	"time"
 )
 
-func concurrenceHTTP() {
-	fmt.Println("========== concurrenceHttp ==========")
+func main() {
 	urls := []string{"http://www.baidu.com", "http://www.qq.com", "http://www.taobao.com"}
 
 	start := time.Now()
@@ -22,7 +21,7 @@ func concurrenceHTTP() {
 		fmt.Println(<-ch)
 	}
 
-	fmt.Printf("%.2fs elapsed\n", time.Since(start).Seconds())
+	fmt.Printf("%.3fs elapsed\n", time.Since(start).Seconds())
 }
 
 func fetch(url string, ch chan<- string) {
@@ -41,5 +40,5 @@ func fetch(url string, ch chan<- string) {
 	}
 
 	secs := time.Since(start).Seconds()
-	ch <- fmt.Sprintf("%.2fs  %7d  %s", secs, nbytes, url)
+	ch <- fmt.Sprintf("%.3fs  %7d  %s", secs, nbytes, url)
 }
