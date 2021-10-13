@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"unicode/utf8"
 )
 
 func main() {
@@ -31,5 +32,8 @@ func main() {
 
 	fmt.Println(strings.ToUpper("toupper"))
 	fmt.Println(strings.ToLower("TOLOWER"))
-}
 
+	str6 := "你好，中国"
+	fmt.Println(len(str6))                    //15
+	fmt.Println(utf8.RuneCountInString(str6)) //5
+}
