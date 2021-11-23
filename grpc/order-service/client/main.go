@@ -2,11 +2,14 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
-	pb "ordermgt/client/ecommerce"
 	"time"
 
+	pb "ordermgt/client/ecommerce"
+
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/metadata"
 )
 
 const (
@@ -23,6 +26,11 @@ func main() {
 	client := pb.NewOrderManagementClient(conn)
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
 	defer cancel()
+
+	// metadata用于在grpc服务间传递一些类似http header的kv参数
+	ctx = metadata.AppendToOutgoingContext(ctx, "meta-data", "is metadata", "k1", "v1", "k2", "v2")
+
+	fmt.Println(ctx)
 
 	// Add Order
 	order1 := pb.Order{Id: "101", Items: []string{"iPhone XS", "Mac Book Pro"}, Destination: "San Jose, CA", Price: 2300.00}

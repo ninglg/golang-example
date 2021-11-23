@@ -3,19 +3,22 @@ package main
 import (
 	"context"
 	"fmt"
+	"io"
+	"log"
+	"net"
+	"strings"
+
 	"github.com/golang/protobuf/ptypes/wrappers"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
+	"google.golang.org/grpc/metadata"
 	"google.golang.org/grpc/status"
+
+	pb "ordermgt/service/ecommerce"
 
 	/*"github.com/golang/protobuf/ptypes/wrappers"
 	"google.golang.org/grpc"*/
 	wrapper "github.com/golang/protobuf/ptypes/wrappers"
-	"io"
-	"log"
-	"net"
-	pb "ordermgt/service/ecommerce"
-	"strings"
 )
 
 const (
@@ -33,6 +36,11 @@ type server struct {
 func (s *server) AddOrder(ctx context.Context, orderReq *pb.Order) (*wrapper.StringValue, error) {
 	log.Printf("Order Added. ID : %v", orderReq.Id)
 	orderMap[orderReq.Id] = *orderReq
+
+	// 服务端尝试接收 metadata 数据，通过 FromIncomingContext 接收
+	md, _ := metadata.FromIncomingContext(ctx)
+	fmt.Println(md)
+
 	return &wrapper.StringValue{Value: "Order Added: " + orderReq.Id}, nil
 }
 
