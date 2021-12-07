@@ -9,7 +9,9 @@ import (
 
 func main() {
     router := mux.NewRouter()
+
     go h.run()
+
     router.HandleFunc("/ws", myws)
     if err := http.ListenAndServe("127.0.0.1:8090", router); err != nil {
         fmt.Println("err:", err)
