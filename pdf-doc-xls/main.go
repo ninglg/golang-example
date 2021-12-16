@@ -12,14 +12,14 @@ func main() {
 	pdf.SetTextColor(255, 0, 0)
 	pdf.AddPage()
 
-        // 将html转为pdf
-        // todo: 如果html中含有b或i标签，会报错。其它场景暂未发现问题
+	// 将html转为pdf
+	// todo: 如果html中含有b或i标签，会报错。其它场景暂未发现问题
 	htmlStr := `测试一下中文: , ` +
 		`, <u>带下划线的文本</u>, or <u>all at once</u>!<br><br>` +
 		`<center>此处文本居中</center>` +
 		`<right>文本右侧排列.</right>` +
 		`也可以插入链接，比如：` +
-		`<a href="https://www.test.com">https://www.test.com</a>, or 或者图片: click on the logo.`
+		`<a href="https://www.test.com">https://www.test.com</a>, or 或者图片: click on the logo.23423534645765857867968797897898786576545423423423523453425234523452345`
 	html := pdf.HTMLBasicNew()
 	html.Write(15, htmlStr)
 	err := pdf.OutputFileAndClose("write_html.pdf")
