@@ -9,9 +9,9 @@ type address struct {
 	city string
 }
 type person struct {
-	name string
-	age  int
-	friends []*person  // 可用指针类型创建递归数据结构，如链表或树。
+	name    string
+	age     int
+	friends []*person // 可用指针类型创建递归数据结构，如链表或树。
 	address
 }
 
@@ -36,6 +36,6 @@ func main() {
 	fmt.Println("struct z : ", z)
 
 	// 4
-	g := person{age: 17, name: "ddd", friends:nil, address:address{}}
+	g := person{age: 17, name: "ddd", friends: nil, address: address{}}
 	fmt.Println("struct g : ", g)
 }

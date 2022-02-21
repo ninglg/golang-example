@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-// for是唯一的循环语句
+// for是Go里面的唯一循环语句
+// for循环的三个组成部分两边不用小括号，但大括号是必需的
 func main() {
 	for i := 0; i < 10; i++ {
 		fmt.Printf("%d ", i)

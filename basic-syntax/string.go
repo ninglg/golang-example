@@ -25,6 +25,9 @@ func main() {
 
 	str4 := "this_is_a_test"
 	fmt.Println("str4 : ", strings.Split(str4, "_"))
+	fmt.Println("str4 SplitN : ", strings.SplitN(str4, "_", 3))
+	fmt.Println("str4 SplitAfter : ", strings.SplitAfter(str4, "_"))
+	fmt.Println("str4 SplitAfterN : ", strings.SplitAfterN(str4, "_", 3))
 
 	str5 := `abc`
 	s5 := []byte(str5)
