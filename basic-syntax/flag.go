@@ -1,9 +1,9 @@
 package main
 
 import (
-"flag"
-"fmt"
-"os"
+	"flag"
+	"fmt"
+	"os"
 )
 
 // 实际中应该用更好的变量名
@@ -21,6 +21,7 @@ var (
 )
 
 func init() {
+	// 变量，命令字母，默认值，注释说明
 	flag.BoolVar(&h, "h", false, "this help")
 
 	flag.BoolVar(&v, "v", false, "show version and exit")
@@ -52,7 +53,9 @@ Options:
 }
 
 func main() {
+	// 使用参数前先要parse解析一下
 	flag.Parse()
+
 	if h {
 		flag.Usage()
 	}

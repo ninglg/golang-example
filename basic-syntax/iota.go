@@ -14,7 +14,19 @@ const (
 	ii        // 8
 )
 
+const (
+	mutexLocked = 1 << iota
+	mutexWoken
+	mutexStarving
+	mutexWaiterShift = iota
+)
+
 func main() {
-	fmt.Println(aa, bb, cc, dd, ee, ff, gg, hh, ii)
 	//0 1 2 ha ha 100 100 7 8
+	fmt.Println(aa, bb, cc, dd, ee, ff, gg, hh, ii)
+
+	// 1 2 4 3
+	// 当在一个const组中仅有一个标示符在一行的时候，它将使用增长的iota取得前面的表达式并且再运用它
+	// 在Go语言的spec中，这就是所谓的隐性重复最后一个非空的表达式列表
+	fmt.Println(mutexLocked, mutexWoken, mutexStarving, mutexWaiterShift)
 }
