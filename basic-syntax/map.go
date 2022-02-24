@@ -41,4 +41,7 @@ func main() {
 	}
 
 	// map的值类型本身可以是符合数据类型，例如map或slice。
+	// map的key必须是可比较类型，不可以是slice、map、function
 }
+
+// 和slice一样，map不可比较，唯一合法的比较就是和nil作比较。

@@ -29,12 +29,16 @@ func main() {
 	fmt.Println("append 2 :", su)
 
 	// copy
-	st := []int{12, 34}
+	st := []int{12, 34, 56, 78}
 	sk := make([]int, 2)
 	copy(sk, st)
 	fmt.Println("slice copy : ", sk)
+	// 部分cooy，比如移除其中一个元素。另外如果对顺序没要求，也可以把最后一个元素覆盖过来。
+	copy(st[1:], st[2:])
+	fmt.Println("slice part copy: ", st[:len(st)-1])
 
 	// slice init
+	// 给部分下标的位置进行赋值
 	i := []int{3: 4, 6: 9}
 	fmt.Println("slice2 : ", i)
 
@@ -45,3 +49,6 @@ func main() {
 		fmt.Printf("%f ", num)
 	}
 }
+
+// 和数组不同，slice无法做比较，不能用==来测试两个slice是否拥有相同的元素。但可以使用内置的比较函数。
+// slice唯一允许的比较操作就是和nil做比较。

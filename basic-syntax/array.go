@@ -11,3 +11,10 @@ func main() {
 	fmt.Println(arr2)
 	fmt.Println(arr3)
 }
+
+// 如果一个数组的元素类型是可比较的，那么这个数组也是可比较的
+
+// 也可以显示的传递一个数组的指针给函数。比如以下版本的数组清零程序：
+func zero(ptr *[32]byte) {
+	*ptr = [32]byte{}
+}
