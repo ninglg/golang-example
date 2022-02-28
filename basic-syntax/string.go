@@ -39,4 +39,14 @@ func main() {
 	str6 := "你好，中国"
 	fmt.Println(len(str6))                    //15
 	fmt.Println(utf8.RuneCountInString(str6)) //5
+
+	// 用加号连接两个字符串
+	str7 := "this is " + "str7."
+	fmt.Println(str7)
+
+	// 多行字符串
+	str8 := `this is multi-line
+	string str8.
+	`
+	fmt.Println(str8)
 }
