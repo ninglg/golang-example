@@ -49,4 +49,8 @@ func main() {
 	string str8.
 	`
 	fmt.Println(str8)
+
+	// 字符串虽然不能更改，但可以进行切片操作
+	str9 := str8[5:]
+	fmt.Println(str9)
 }

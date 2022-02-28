@@ -4,6 +4,18 @@ import "fmt"
 
 // 如果变量没有明确初始化，它将隐式地初始化为这个类型的空值
 
+// 可用分组方式定义变量
+const (
+	i      = 100
+	pi     = 3.14
+	prefix = "Go_"
+)
+
+var (
+	a int
+	c string
+)
+
 func main() {
 	a := "aaa"   //比较常用
 	var b string //比较常用
