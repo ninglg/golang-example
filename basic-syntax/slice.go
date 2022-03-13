@@ -48,6 +48,14 @@ func main() {
 	for _, num := range si {
 		fmt.Printf("%f ", num)
 	}
+
+	// 就地反转一个整形slice
+	sr := []int{12, 34, 56, 78}
+	for i, j := 0, len(sr)-1; i < j; i, j = i+1, j-1 {
+		sr[i], sr[j] = sr[j], sr[i]
+	}
+
+	fmt.Println("slice reverse: ", sr)
 }
 
 // 和数组不同，slice无法做比较，不能用==来测试两个slice是否拥有相同的元素。但可以使用内置的比较函数。
