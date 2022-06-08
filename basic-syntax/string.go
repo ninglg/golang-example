@@ -44,7 +44,7 @@ func main() {
 	str7 := "this is " + "str7."
 	fmt.Println(str7)
 
-	// 多行字符串
+	// 用反引号表示多行字符串
 	str8 := `this is multi-line
 	string str8.
 	`
