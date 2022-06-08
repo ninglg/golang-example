@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strconv"
 	"strings"
 	"unicode/utf8"
 )
@@ -53,4 +54,11 @@ func main() {
 	// 字符串虽然不能更改，但可以进行切片操作
 	str9 := str8[5:]
 	fmt.Println(str9)
+
+	// 字符串和数字的转换
+	str10 := "123"
+	int10, _ := strconv.Atoi(str10)
+	fmt.Println("strconv.Atoi: ", int10)
+	str11 := strconv.Itoa(int10)
+	fmt.Println("strconv.Itoa: ", str11)
 }
