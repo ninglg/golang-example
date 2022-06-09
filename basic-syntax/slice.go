@@ -56,6 +56,15 @@ func main() {
 	}
 
 	fmt.Println("slice reverse: ", sr)
+
+	// 可以使用slice来实现栈
+	// 栈的顶部是最后一个元素，通过弹出最后一个元素来缩减栈
+	ss := []int{1, 2, 3, 4, 5}
+	ss = append(ss, 6)
+	top := ss[len(ss)-1]
+	fmt.Println("stack top: ", top)
+	ss = ss[:len(ss)-1]
+	fmt.Println("stack pop: ", ss)
 }
 
 // 和数组不同，slice无法做比较，不能用==来测试两个slice是否拥有相同的元素。但可以使用内置的比较函数。
