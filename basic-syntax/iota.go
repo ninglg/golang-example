@@ -8,8 +8,8 @@ const (
 	cc        // 2
 	dd = "ha" // 独立值"ha", iota += 1
 	ee        // "ha"   iota += 1
-	ff = 100  // iota +=1
-	gg        // 100  iota +=1
+	ff = 100  // iota += 1
+	gg        // 100  iota += 1
 	hh = iota // 7, 恢复计数
 	ii        // 8
 )

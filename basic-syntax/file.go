@@ -27,17 +27,17 @@ func main() {
 	// 将字符串一行一行的写入文件
 	d2 := []string{"welcome to the world", "it is beautiful"}
 	for _, v := range d2 {
-		fmt.Fprintln(f, v)
+		_, _ = fmt.Fprintln(f, v)
 	}
 
-	f.Close()
+	_ = f.Close()
 	// 追加到文件
-	f, _ = os.OpenFile("test.txt", os.O_APPEND|os.O_WRONLY, 0644)
+	f, _ = os.OpenFile("test.txt", os.O_CREATE|os.O_APPEND|os.O_WRONLY, os.ModePerm)
 	newLine := "File handling is easy."
 	_, _ = fmt.Fprintln(f, newLine)
 	fmt.Println("file appended successfully")
 
-	f.Close()
+	_ = f.Close()
 	// 删除文件
 	_ = os.Remove("test.txt")
 	fmt.Println("file removed successfully")
