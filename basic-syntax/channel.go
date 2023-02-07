@@ -33,6 +33,14 @@ func main() {
 	// 遍历通道与关闭通道
 	ch <- 3
 	ch <- 4
+
+	/*
+	关闭未初始化的channel(nil)会panic
+	重复关闭同一channel会panic
+	向以关闭channel发送消息会panic
+	从已关闭channel读取数据，不会panic，若存在数据，则可以读出未被读取的消息，若已被读出，则获取的数据为零值，可以通过ok-idiom的方式，判断channel是否关闭
+	channel的关闭操作，会产生广播消息，所有向channel读取消息的goroutine都会接受到消息
+	 */
 	close(ch)
 	//for {
 	//	if v, ok := <-ch; ok {
@@ -44,4 +52,17 @@ func main() {
 	for v := range ch {
 		fmt.Println(v)
 	}
+
+
+
+	/*
+	单向channel
+	其中 chan<- int表示只写channel, <-chan int表示只读channel，此类函数/方法声明可防止channel滥用，在编译时可以检测出。
+	 */
+
+
+	/*
+	有缓存的channel使用环形数组实现，当缓存未满时，向channel发送消息不会阻塞，当缓存满时，发送操作会阻塞，
+	直到其他goroutine从channel中读取消息；同理，当channel中消息不为空时，读取消息不会阻塞，当channel为空时，读取操作会阻塞，直至其他goroutine向channel发送消息。
+	*/
 }
